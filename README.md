@@ -24,7 +24,7 @@
 * Nugu Play Builder는 Nugu에서 제공하는 GUI 형태의 play 개발 플랫폼이다. 
 * GUI 형태여서 간단한 구조는 손쉽게 개발할 수 있다.
 
-[플레이 빌더 tree 구조 사진]
+<img src="/20200220_170233.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
 
 위와 같은 구조를 띄고 있음
 
@@ -50,7 +50,6 @@ backend proxy server와 HTTP request response를 주고 받음.
 
 * 프로젝트의 메인인 부분이다. 크게 4가지로 구성되어 있다.
 
-----
     1. Relay Server로부터 발화 명령을 전달받고 그에 따른 이미지를 화면에 나타내는 부분.
     2. 현재 카메라로 받는 이미지에서 얼굴 및 눈을 검출하는 부분.
     3. 한 장의 이미지에서 사용자의 카메라까지의 거리를 구하는 부분.
