@@ -3,7 +3,8 @@
 ----
 ## 1. 프로젝트 개요
     누구 네모를 위한 플레이를 개발하는 것이 목적인 프로젝트
-    기존 누구의 AI speaker만을 이용하는 것이 아닌 카메라와 디스플레이가 존재하는 NUGU nemo에 적용할만한 아이디어를 고안하고
+    기존 누구의 AI speaker만을 이용하는 것이 아닌 카메라와 디스플레이가
+    존재하는 NUGU nemo에 적용할만한 아이디어를 고안하고
     이를 실제로 구현해보고자 함.
 
 
@@ -19,7 +20,10 @@
     
 ----
 
-###2.1 Nugu Play Builder
+### 2.1 Nugu Play Builder
+* Nugu Play Builder는 Nugu에서 제공하는 GUI 형태의 play 개발 플랫폼이다. 
+* GUI 형태여서 간단한 구조는 손쉽게 개발할 수 있다.
+
 [플레이 빌더 tree 구조 사진]
 
 위와 같은 구조를 띄고 있음
@@ -28,20 +32,32 @@
 
 backend proxy server와 HTTP request response를 주고 받음.
 
+### 2.2 Google Cloud Function
+    Google Cloud Function 이란?
+* Google cloud의 이벤트 기반 서버리스 컴퓨팅 플랫폼. 즉, 서버를 유지할 필요 없이 실행할 코드만 클라우드에 올려놓으면 특정 이벤트(put, get, … rest API 형태)가 생길 시에 코드가 실행되는 형태.
+서버를 관리할 필요가 없이 손쉽게 서버처럼 이용 가능. ( invoke 된 횟수, 사용한 리소스만큼만 금액을 지불하면 됨. )
 
-    asdadsd
->asdasd
+* GoogleCloudFunction directory에 어떤 식으로 코드를 첨부해야하는지에 대한 설명을 추가할 계획
 
-*asd*
+### 2.3 Relay Server
+* 원래는 Google Cloud Function 에서 바로 노트북에 socket으로 메세지를 보내서 누구 플레이의 발화를 전달하려고 하였으나 학교의 인터넷 환경상 공인 ip를 사용할 수 없었기 때문에 Relay Server를 두었다. ( Google Cloud Computing engine의 VM을 사용 )
 
-**asdasd**
+* 원래는 이러한 가상 서버에서 이미지에 대한 처리를 하려 했으나 누구 네모에서의 카메라 제어나 파일 전송 등을 모두 지원하지 않아서 Relay Server의 기능과 몇 가지의 플레이 진행상황(status)을 다루게 하였다.
 
-* 1
-* 2
+* 현재는 코드가 다수의 기기가 아닌 1개의 기기와의 연결만 지원하는 형태로 구현되어 있다. 추후에 작업을 통해 누구 디바이스에 따라서 메세지를 처리해주게 변경해야 한다.
 
+### 2.4 Device python code
 
+* 프로젝트의 메인인 부분이다. 크게 4가지로 구성되어 있다.
 
 ----
+    1. Relay Server로부터 발화 명령을 전달받고 그에 따른 이미지를 화면에 나타내는 부분.
+    2. 현재 카메라로 받는 이미지에서 얼굴 및 눈을 검출하는 부분.
+    3. 한 장의 이미지에서 사용자의 카메라까지의 거리를 구하는 부분.
+    4. 사용자의 자세를 추정하여 눈을 가린 여부를 확인하는 부분.
+
+----
+
 ## Reference
 ### 1. Dlib: A Machine Learning Toolkit
 http://www.jmlr.org/papers/volume10/king09a/king09a.pdf
