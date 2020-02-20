@@ -26,11 +26,9 @@
 
 <img src="/NuguTree.png" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="NuguTree"></img>
 
-위와 같은 구조를 띄고 있음
+* 위와 같이 트리형태의 구조를 띄고 있다. 계층적인 구조이며 그에 맞게 발화 내용이 처리 된다.
 
-진행되는 방식 ( 참조 )
-
-backend proxy server와 HTTP request response를 주고 받음.
+* Nugu Play Builder에 대한 간단한 제작 방법이나 설명은 추후에 추가할 예정
 
 ### 2.2 Google Cloud Function
     Google Cloud Function 이란?
@@ -50,6 +48,7 @@ backend proxy server와 HTTP request response를 주고 받음.
 
 * 프로젝트의 메인인 부분이다. 크게 4가지로 구성되어 있다.
 
+----
     1. Relay Server로부터 발화 명령을 전달받고 그에 따른 이미지를 화면에 나타내는 부분.
     2. 현재 카메라로 받는 이미지에서 얼굴 및 눈을 검출하는 부분.
     3. 한 장의 이미지에서 사용자의 카메라까지의 거리를 구하는 부분.
