@@ -24,7 +24,7 @@
 * Nugu Play Builder는 Nugu에서 제공하는 GUI 형태의 play 개발 플랫폼이다. 
 * GUI 형태여서 간단한 구조는 손쉽게 개발할 수 있다.
 
-<img src="/20200220_170233.png" width="40%" height="30%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+<img src="/NuguTree.png" width="100%" height="100%" title="px(픽셀) 크기 설정" alt="NuguTree"></img>
 
 위와 같은 구조를 띄고 있음
 
